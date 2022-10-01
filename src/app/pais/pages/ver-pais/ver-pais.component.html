@@ -21,7 +21,17 @@
         <li class="list-group-item">
           <strong>Población: </strong> {{ pais[0].population | number }}
         </li>
+        <li class="list-group-item">
+          <strong>Código Númerico: </strong> {{ pais[0].cca3 }}
+        </li>
       </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of pais[0].translations | keyvalue" class="col">
+      <span class="badge bg-primary mr-1">{{
+        pais[0].translations[item.key].common
+      }}</span>
     </div>
   </div>
 </ng-template>
